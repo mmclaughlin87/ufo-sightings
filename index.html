@@ -31,23 +31,54 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <h3>Search By Date</h3>
+                <h3>Select Country</h3>
+                <select name="Countries" id="countrySelect" class="form-control">
+                </select>
+            </div>
+            <div class="col-md-4">
+                <h3>Select State</h3>
+                <select name="Countries" id="stateSelect" class="form-control">
+                </select>
+            </div>
+            <div class="col-md-4">
+                <h3>Search By City</h3>
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for date" id="dateInput">
+                    <input type="text" class="form-control" placeholder="Search for city" id="cityInput">
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="button" id="dateButton">Search</button>
+                        <button class="btn btn-default" type="button" id="cityButton">Search</button>
                     </span>
-
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Search By Date</h3>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for date (m/d/yyy)" id="dateInput">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" id="dateButton">Search</button>
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h3>Select Shape</h3>
+                <select name="Shapes" id="shapeSelect" class="form-control">
+                </select>
+            </div>
+            <div class="col-md-4">
+                <div style="margin:auto">
+                    <button class="btn btn-primary btn-md" id="clearSelections">Clear Selections</button>
+                </div>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">UFO Sitings</div>
                     <table class="table table-striped">
-                        <thead class="mdb-color darken-3">
-                            <tr class="text-white">
+                        <thead>
+                            <tr>
                                 <th>Date</th>
                                 <th>City</th>
                                 <th>State</th>
