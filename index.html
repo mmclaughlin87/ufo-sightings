@@ -18,6 +18,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" type="text/css" href="style.css">
+
     <title>UFO Sightings</title>
 </head>
 
@@ -25,7 +27,7 @@
     <div class="jumbotron">
         <div class="container">
             <h1>UFO SITINGS</h1>
-            <p>A searchable database of reported UFO sitings.</p>
+            <p>A searchable database of reported UFO sitings</p>
         </div>
     </div>
     <div class="container">
@@ -65,16 +67,13 @@
                 <select name="Shapes" id="shapeSelect" class="form-control">
                 </select>
             </div>
-            <div class="col-md-4">
-                <div style="margin:auto">
-                    <button class="btn btn-primary btn-md" id="clearSelections">Clear Selections</button>
-                </div>
+            <div class="col-md-4" id="clear-div">
+                <button class="btn btn-primary btn-md" id="clearSelections">Clear Selections</button>
             </div>
         </div>
-
         <div class="row">
             <div class="col-md-12">
-                <div class="panel panel-default">
+                <div class="panel panel-default table-panel">
                     <div class="panel-heading">UFO Sitings</div>
                     <table class="table table-striped">
                         <thead>

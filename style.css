@@ -1,0 +1,13 @@
+.table-panel {
+    margin-top: 40px;
+}
+
+.jumbotron {
+    background-image: url("assets/night-sky.png");
+    color: #52FF2F;
+    font-family: Courier New, Courier, monospace;
+}
+#clear-div {
+    padding-left: 40px;
+    padding-top: 40px;
+}

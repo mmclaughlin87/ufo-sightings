@@ -16,6 +16,11 @@ var shapeSelector = d3.select('#shapeSelect');
 var stateSelector = d3.select('#stateSelect');
 var countrySelector = d3.select('#countrySelect');
 
+//initialize select options
+var selectedCountry = ""
+var selectedState = ""
+var selectedShape = ""
+
 function getCountryList(dataForTable){
     var allCountries = [];
     for(i=0; i<dataForTable.length; i++){
@@ -56,6 +61,9 @@ function renderTable(dataForTable) {
     createDropdown(countrySelector, getCountryList,dataForTable);
     createDropdown(stateSelector, getStateList,dataForTable);
     createDropdown(shapeSelector, getShapeList,dataForTable);
+    countrySelector.property('value', selectedCountry);
+    stateSelector.property('value', selectedState);
+    shapeSelector.property('value', selectedShape);
 };
 
 renderTable(dataSet);
@@ -74,7 +82,6 @@ function clearDropdowns(){
 
 var dateButton = d3.select('#dateButton');
 var dateInput = d3.select('#dateInput');
-
 dateButton.on("click", dateClick);
 
 function dateClick(){
@@ -82,13 +89,90 @@ function dateClick(){
     clearTable();
     clearDropdowns();
     var selectedDate = dateInput.node().value.trim();
-    if (selectedDate == ""){
+    // if (selectedDate == ""){
+    //     dataForTable = dataSet;
+    // }
+    // else {
+    //     dataForTable = dataForTable.filter(function(dataForTable){
+    //         return dataForTable.datetime == selectedDate;
+    //         ////ADD EVERYTHING IN HERE SET WHAT THE "SELECTED" ITEMS ARE OUTSIDE 
+    //     });
+    // };
+    setFilters(selectedDate,"datetime");
+    renderTable(dataForTable);
+};
+
+var cityButton = d3.select('#cityButton');
+var cityInput = d3.select('#cityInput');
+cityButton.on("click", cityClick);
+
+function cityClick(){
+    d3.event.preventDefault();
+    clearTable();
+    clearDropdowns();
+    var selectedCity = cityInput.node().value.trim().toLowerCase();
+    setFilters(selectedCity,"city");
+    renderTable(dataForTable);
+};
+
+countrySelector.on("change", countryChange);
+
+function countryChange(){
+    d3.event.preventDefault();
+    clearTable();
+    selectedCountry = countrySelector.node().value
+    clearDropdowns();
+    setFilters(selectedCountry,"country");
+    renderTable(dataForTable);
+};
+
+stateSelector.on("change", stateChange);
+
+function stateChange(){
+    d3.event.preventDefault();
+    clearTable();
+    selectedState = stateSelector.node().value
+    clearDropdowns();
+    setFilters(selectedState,"state");
+    renderTable(dataForTable);
+};
+
+shapeSelector.on("change", shapeChange);
+
+function shapeChange(){
+    d3.event.preventDefault();
+    clearTable();
+    selectedShape = shapeSelector.node().value
+    clearDropdowns();
+    setFilters(selectedShape,"shape");
+    renderTable(dataForTable);
+};
+
+//filter table data according to selections
+function setFilters(value, property){
+    if (value == ""){
         dataForTable = dataSet;
     }
     else {
         dataForTable = dataForTable.filter(function(dataForTable){
-            return dataForTable.datetime == selectedDate;
+            return dataForTable[property] == value;
         });
     };
+};
+
+//clear all
+var clearButton = d3.select('#clearSelections');
+clearButton.on("click", clearAll);
+
+function clearAll(){
+    selectedCountry = ""
+    selectedState = ""
+    selectedShape = ""
+    dataForTable = dataSet
+    dateInput.property('value', selectedState);
+    cityInput.property('value', selectedShape);
+    clearTable();
+    clearDropdowns();
+    
     renderTable(dataForTable);
 };
