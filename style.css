@@ -8,6 +8,15 @@
     font-family: Courier New, Courier, monospace;
 }
 #clear-div {
-    padding-left: 40px;
-    padding-top: 40px;
+    /* padding-left: 40px; */
+    padding-top: 38px;
+    display: flex; 
+    justify-content: center;
 }
+#dataTable>tr:nth-child(even) {
+    background-color: #6E6B6B !important;
+  }
+
+  #dataTable>tr:nth-child(odd) {
+    background-color: #fff !important;
+  }
