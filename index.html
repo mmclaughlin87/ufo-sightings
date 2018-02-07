@@ -27,7 +27,7 @@
     <div class="jumbotron">
         <div class="container">
             <h1>UFO SIGHTINGS</h1>
-            <p>A searchable database of reported UFO sightings</p>
+            <p>A database of 20K+ reported UFO sightings from 2010-2014</p>
         </div>
     </div>
     <div class="container">
@@ -73,11 +73,13 @@
         </div>
         <div class="row">
             <div class="col-md-12">
+                <a name="tableAnchor"></a>
                 <div class="panel panel-default table-panel">
                     <div class="panel-heading">UFO Sightings</div>
                     <table class="table table-striped">
                         <thead>
                             <tr>
+                                <th>Sighting</th>
                                 <th>Date</th>
                                 <th>City</th>
                                 <th>State</th>
@@ -92,21 +94,19 @@
                 </div>
             </div>
         </div>
-        <nav aria-label="Page navigation">
-            <ul class="pagination">
-              <li class="disabled">
-                <a href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
+        <nav aria-label="Page navigation" id="pagination-div">
+            <ul class="pagination pagination-lg">
+              <li id="firstLi">
+                <a href="#tableAnchor" id="firstPage" aria-label="First">
+                  &laquo;&laquo;
                 </a>
               </li>
-              <li class="active"><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-              <li>
-                <a href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
+              <li id="prevLi"><a href="#tableAnchor" id="prevPage">1</a></li>
+              <li id="thisLi"><a href="#tableAnchor" id="thisPage">2</a></li>
+              <li id="nextLi"><a href="#tableAnchor" id="nextPage">3</a></li>
+              <li id="lastLi">
+                <a href="#tableAnchor" id="lastPage" aria-label="Last">
+                  &raquo;&raquo;
                 </a>
               </li>
             </ul>

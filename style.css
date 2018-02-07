@@ -13,10 +13,7 @@
     display: flex; 
     justify-content: center;
 }
-#dataTable>tr:nth-child(even) {
-    background-color: #6E6B6B !important;
-  }
-
-  #dataTable>tr:nth-child(odd) {
-    background-color: #fff !important;
-  }
+#pagination-div {
+    display: flex; 
+    justify-content: center;
+}
