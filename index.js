@@ -21,6 +21,7 @@ var selectedCountry = ""
 var selectedState = ""
 var selectedShape = ""
 
+//create select functions
 function getCountryList(dataForTable){
     var allCountries = [];
     for(i=0; i<dataForTable.length; i++){
@@ -75,7 +76,6 @@ function renderTable(dataForTable) {
     else {
         lastResult = (dataForTable.length - firstResult) - 1;
     };
-    console.log("last result", lastResult)
     for(i=0; i<lastResult; i++){
         var newRow = table.append('tr')
         newRow.append('td').attr('style', 'word-wrap: break-word;min-width: 50px;max-width: 400px;').text(firstResult + i + 1);
@@ -91,7 +91,6 @@ function renderTable(dataForTable) {
     stateSelector.property('value', selectedState);
     shapeSelector.property('value', selectedShape);
     lastPage = Math.floor(dataForTable.length/50)
-    console.log(lastPage)
     renderPagination();
 };
 
@@ -204,9 +203,7 @@ function clearAll(){
 
 //handle pagination
 function paginationClick(){
-    // d3.event.preventDefault();
     var paginationBtn = d3.event.target;
-    console.log(paginationBtn.text);
     if (paginationBtn.id == 'prevPage' || paginationBtn.id == 'thisPage' || paginationBtn.id == 'nextPage'){
         curPage = (paginationBtn.text - 1);
     }
@@ -216,7 +213,6 @@ function paginationClick(){
     else if (paginationBtn.id == 'lastPage' || paginationBtn.text == "&raquo;&raquo;"){
         curPage = Math.floor(dataForTable.length/50);
     };
-    console.log(curPage);
     clearTable();
     clearDropdowns();
     renderTable(dataForTable);
