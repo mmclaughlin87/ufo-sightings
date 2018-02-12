@@ -6,6 +6,7 @@
     background-image: url("assets/night-sky.png");
     color: #52FF2F;
     font-family: Courier New, Courier, monospace;
+    margin-bottom: 0px;
 }
 #clear-div {
     /* padding-left: 40px; */
@@ -17,8 +18,12 @@
     display: flex; 
     justify-content: center;
 }
-#map{
+#map {
     height: 500px;
     width: 100%;
     margin-bottom: 40px;
+}
+#headerButton {
+    background-color: #52FF2F;
+    color: black;
 }

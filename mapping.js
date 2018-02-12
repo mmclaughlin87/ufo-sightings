@@ -228,7 +228,7 @@ var stateLocations = [
     },
     {
       "state":"ny",
-      "latitude":42.1497,
+      "latitude":43,
       "longitude":-74.9384
     },
     {
@@ -351,12 +351,13 @@ var myMap = L.map("map", {
   
   for(i=0; i<stateLocations.length; i++){
     var coords = [stateLocations[i].latitude, stateLocations[i].longitude];
-    var cityMarker = L.circle(coords, {
+    var stateMarker = L.circle(coords, {
       radius: 150*stateLocations[i].ufoCount,
       color: "green",
       fillColor: "green"
     }).addTo(myMap);
+    var fullStateName = stateAbbreviations[stateLocations[i].state.toUpperCase()];
+    var annualSightings = Math.round(stateLocations[i].ufoCount/5.35);
+    stateMarker.bindPopup(`<strong>${fullStateName}</strong><br>
+    Annual UFO Sightings: ${annualSightings}`);
   };
-
-console.log(ufoCounts);
-console.log(stateLocations);
