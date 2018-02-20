@@ -11,4 +11,4 @@ Data is sourced from reported sighting of UFOs in United States, Canada, Great B
 [National UFO Reporting Center (NUFORC)](http://www.nuforc.org/ "National UFO Reporting Center (NUFORC)")
 
 ## Screenshot
-![sample screenshot](https://github.com/mmclaughlin87/ufo-sightings/blob/master/readme/sample_screenshot.png "Sample Screenshot")
+![sample screenshot](https://github.com/mmclaughlin87/ufo-sightings/blob/master/readme/sample-screenshot.png "Sample Screenshot")
