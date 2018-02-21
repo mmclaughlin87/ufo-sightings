@@ -1,5 +1,6 @@
 # UFO Sightings
-An interactive visualization and table of self-reported UFO settings. 
+An interactive visualization and table of self-reported UFO settings.
+[Visit Deployed Page](https://mmclaughlin87.github.io/ufo-sightings/ "UFO Sightings")
 
 ## Functionality
 All data is dynamically loaded into a table via Javascript and D3. The table is paginated to 50 results, with filters for City, State/Province, Country, Shape of Object, and Date.
